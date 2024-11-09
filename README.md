@@ -169,10 +169,19 @@ In this case, you may want to configure a static port to allow it in your firewa
 
 ```bash
 vim ./.local/share/dev.mandre.rquickshare/.settings.json
+
+-or can be-
+
+vim Library/Application\ Support/dev.mandre.rquickshare/.settings.json
+
+-to be sure-
+find $HOME -name ".settings.json"
 ```
+
 ```json
 {
 	...existing_config...,
+	// Warning: the json must stay valid after your modification, this means if "port" is the last item of the JSON it must not have a comma after it, otherwise the config will be reset.
 	"port": 12345
 }
 ```
